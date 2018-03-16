@@ -63,7 +63,7 @@ gulp.task('build' ,function(){
 	gulp.src('app/vendor/**/*').pipe(gulp.dest('build/vendor/'));
 });
 
-
+ 
 // Delete files inside dist folder
 gulp.task('del',function(){
 	del.sync('build/*');
