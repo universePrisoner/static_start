@@ -1,12 +1,25 @@
-@import 'font-face-mixin'
+@import 'mixins/font-face-mixin'
+@include font-face('Lato Regular','../fonts/Lato/lato-regular-webfont')
 
+*
+    padding: 0
+    margin: 0
+    font-family: "Lato Regular", serif
+.content
+    margin: 0 auto
+    width: 500px
+    padding: 20px
+    text-align: center
+p
+    margin-bottom: 20px
+    font-size: 2em
+    text-transform: uppercase
+img
+    width: 200px
 
+ 
 
-
-
-
-
-
+ 
 
 
 // Write rules here
