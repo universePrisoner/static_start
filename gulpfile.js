@@ -21,11 +21,11 @@ gulp.task('sass',function(){
 });
 // Pug 
 gulp.task('pug',function(){
-	return gulp.src('app/**/*.pug')
+	return gulp.src('pug/*.pug')
 			.pipe(pug({
 				pretty: true
 			}))
-			.pipe(gulp.dest('app/html/'));
+			.pipe(gulp.dest('app/'));
 });
 gulp.task('fly',function(){
 	// Run server
@@ -37,9 +37,9 @@ gulp.task('fly',function(){
 
 	
 	// Auto reloading browser page
-	gulp.watch('app/pug/**/*.pug',['pug']);
+	gulp.watch('pug/**/*.pug',['pug']);
 	gulp.watch("app/sass/**/*.sass", ['sass']);
-	gulp.watch('app/**/*.html').on('change', browserSync.reload);
+	gulp.watch('app/*.html').on('change', browserSync.reload);
 	gulp.watch('app/js/**/*.js').on('change', browserSync.reload);
 	gulp.watch('app/img/**/*').on('change', browserSync.reload);
 	gulp.watch('app/font/**/*').on('change', browserSync.reload);
