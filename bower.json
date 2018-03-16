@@ -1,0 +1,17 @@
+{
+  "name": "project",
+  "description": "New Project",
+  "main": "main.js",
+  "authors": [
+    "zeroWheel"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
