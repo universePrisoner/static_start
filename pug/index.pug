@@ -4,16 +4,17 @@ include footer/footer
 doctype html
 html
     head
+        |<!--Some -->
         +head({
             'title': 'New project',
-            'tileColor': '#000'
-            //- 'vendorCss': [
-            //-     'vendor/library'
-            //- ],
-            //- 'css': [
-            //-         'reset',
-            //-         'main'
-            //-     ]
+            'tileColor': '#000',
+            'vendorCss': [
+                'vendor/library'
+            ],
+            'css': [
+                    'reset',
+                    'main'
+                ]
         })
     body
         h1 Color here
