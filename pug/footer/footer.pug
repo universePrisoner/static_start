@@ -1,0 +1,6 @@
+mixin footer(data)
+    each js in data.libsJs
+        script(src="vendor/" + js + '.js')
+    each js in data.js
+        script(src="js/" + js + '.js')
+    

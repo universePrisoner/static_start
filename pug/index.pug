@@ -1,11 +1,27 @@
+include head/head
+include footer/footer
+
 doctype html
 html
     head
-        meta(name="author" content="zeroWheel")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        title Basis teamplate
-        link(rel="stylesheet" type="text/css" href="css/main.css")
+        +head({
+            'title': 'New project',
+            'tileColor': '#000'
+            //- 'vendorCss': [
+            //-     'vendor/library'
+            //- ],
+            //- 'css': [
+            //-         'reset',
+            //-         'main'
+            //-     ]
+        })
     body
-        .content
-            p Basis teamplate for front-end web development
-            img(src="images/pug.jpeg")
+        h1 Color here
+        //- +footer({
+        //-     'libsJs':[
+        //-         //- Javascript libs path here 'vendor/...'
+        //-     ],
+        //-     'js':[
+        //-         //- your custom JavaScript code here 'js/...'
+        //-     ]
+        //- })
