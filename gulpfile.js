@@ -55,6 +55,7 @@ gulp.task('fly',function(){
 
 // Build Function
 gulp.task('build' ,function(){
+	gulp.src('bower_components/html5shiv/dist/html5shiv.js').pipe(gulp.dest('build/vendor/html5shiv/'));
 	gulp.src('app/*.html').pipe(gulp.dest('build/'));
 	gulp.src('app/css/**/*.css').pipe(gulp.dest('build/css/'));
 	gulp.src('app/js/**/*.js').pipe(gulp.dest('build/js/'));

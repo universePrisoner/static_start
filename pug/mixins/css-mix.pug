@@ -1,0 +1,11 @@
+mixin css-mix(data)
+    each x in data.vendorCSS
+        //- add link tag into HTML
+        link(rel="stylesheet", href="/"+x.path+'.css')
+        //- change vendor CSS document name to UPPERCASE
+        - var name = x.name.toUpperCase()
+        //- add comments into HTML
+        <!--#{name}-->
+    each x in data.yourCSS
+        link(rel="stylesheet", href="/"+x+'.css')
+        <!--CUSTOM CSS-->
