@@ -9,3 +9,4 @@ mixin css-mix(data)
     each x in data.yourCSS
         link(rel="stylesheet", href="/"+x+'.css')
         <!--CUSTOM CSS-->
+    |<!--[if lt IE 9]><script src="vendor/html5shiv/html5shiv.js"></script><![endif]-->
