@@ -1,0 +1,73 @@
+//- extract defaul template
+extends sheme
+
+//- include css and js mixins to add css and js :)
+include mixins/css-mix
+include mixins/js-mix
+//- most common options
+block append options
+    -var title = 'Home'
+//- include styles CSS here
+block append styles
+    +css-mix({
+        vendorCSS:[
+            {
+                'name': 'bootstrap-grid',
+                'path': 'vendor/bootstrap/bootstrap-grid'
+            },
+            {
+                'name': 'jquery-css',
+                'path': 'vendor/jquery/jquery-css'
+            },
+            {
+                'name': 'font-awesome',
+                'path': 'vendor/font-awesome/font-awesome'
+            }
+        ],
+        yourCSS:[
+            'css/reset',
+            'css/main'
+        ]
+    })
+    |<!--[if lt IE 9]><script src="vendor/html5shiv/html5shiv.js"></script><![endif]-->
+
+
+
+
+
+//- type your HTML here
+//- start with 'block content' hit enter end start 
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- include JS scripts
+block append scripts
+    +js-mix({
+        vendorJS: [{
+                'name': 'jquery',
+                'path': 'vendor/any-vendor-folder/any-vendor-js'},
+            {
+                'name': 'slick-slider',
+                'path': 'vendor/any-vendor-folder/any-vendor-js'
+                },
+            {
+                'name': 'bower',
+                'path': 'vendor/any-vendor-folder/any-vendor-js'
+                }
+        ]
+        ,
+        yourJS:[
+            'js/main',
+            'js/any-other-file-with-js-extention'
+        ]
+    })

@@ -1,32 +1,28 @@
-@keyframes dog
-    0%
-        transform: rotate(10deg)  
-    50%
-        transform: rotate(-10deg)
-    100%
-        transform: rotate(10deg)
-.default
-    font-size: 2em
-    position: absolute
-    padding: 50px
-    top: 50%
-    left: 50%
-    transform: translate(-50%,-50%)
-    border: 5px solid lightblue
-    color: rgb(170, 125, 176)
-    padding-top: 200px
-    h1
-        text-align: center
-    a
-        color: rgb(83, 193, 187)
-    img
-        position: absolute
-        left: 35%
-        top: 0
-        transform: translateX(-50%)
-        animation-name: dog
-        animation-duration: 4s
-        width: 200px
-        transition: all .3s ease-in-out
-        animation-iteration-count: infinite
-
+*
+	color: #646464
+header, footer
+	width: 100%
+	text-align: center
+	background-color: #a86454
+	padding: 20px
+	p
+		font-size: 15px
+		color: #fff
+.home
+	&__content
+		width: 90%
+		background-color: #fff
+		margin: 0 auto
+		padding: 20px
+		box-sizing: border-box
+		text-align: center
+		img
+			width: 50%
+			display: block
+			margin: 0 auto
+		p
+			span
+				color: red
+		.hereDog
+			font-size: 20px
+			color: green
