@@ -14,14 +14,6 @@ block append styles
             {
                 'name': 'bootstrap-grid',
                 'path': 'vendor/bootstrap/bootstrap-grid'
-            },
-            {
-                'name': 'jquery-css',
-                'path': 'vendor/jquery/jquery-css'
-            },
-            {
-                'name': 'font-awesome',
-                'path': 'vendor/font-awesome/font-awesome'
             }
         ],
         yourCSS:[
@@ -29,9 +21,8 @@ block append styles
             'css/main'
         ]
     })
+    |
     |<!--[if lt IE 9]><script src="vendor/html5shiv/html5shiv.js"></script><![endif]-->
-
-
 
 
 
@@ -40,34 +31,15 @@ block append styles
 
 
 
-
-
-
-
-
-
-
-
-
-
 //- include JS scripts
 block append scripts
     +js-mix({
         vendorJS: [{
                 'name': 'jquery',
-                'path': 'vendor/any-vendor-folder/any-vendor-js'},
-            {
-                'name': 'slick-slider',
-                'path': 'vendor/any-vendor-folder/any-vendor-js'
-                },
-            {
-                'name': 'bower',
-                'path': 'vendor/any-vendor-folder/any-vendor-js'
-                }
+                'path': 'vendor/any-vendor-folder/any-vendor-js'}
         ]
         ,
         yourJS:[
-            'js/main',
-            'js/any-other-file-with-js-extention'
+            'js/main'
         ]
     })
