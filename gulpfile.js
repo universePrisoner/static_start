@@ -1,4 +1,5 @@
 let gulp = require('gulp'),
+	sassGlobe = require('gulp-sass-glob'),
 	sass = require('gulp-sass'),
 	autoprefixer = require('gulp-autoprefixer'),
 	browserSync = require('browser-sync'),
@@ -12,6 +13,7 @@ let gulp = require('gulp'),
 // Use packages: gulp-sass, gulp-postcss, postcss-sorting, gulp-autoprefixer, browser-sync
 gulp.task('sass',function(){
 	return gulp.src('src/sass/**/*.sass')
+			.pipe(sassGlobe())
 			.pipe(sass())
 			.pipe(postcss(
 				[sorting({
