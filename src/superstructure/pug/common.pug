@@ -1,0 +1,39 @@
+//- extract defaul template
+extends scheme
+
+//- include css and js mixins to add css and js :)
+include mixins/css-mix
+include mixins/js-mix
+
+//- include styles CSS without .css ending
+block append styles
+    +css-mix({
+        vendorCSS:[
+            {
+                'name': 'any',
+                'path': 'vendor/'
+            }
+        ],
+        yourCSS:[
+            'css/reset',
+            'css/main'
+        ]
+    })
+    |
+    |<!--[if lt IE 9]><script src="vendor/html5shiv/html5shiv.js"></script><![endif]-->
+
+//- Main content goes here
+
+
+//- include JS scripts without .js ending
+block append scripts
+    +js-mix({
+        vendorJS: [{
+                'name': 'jquery',
+                'path': 'vendor/jquery/jquery.min'}
+        ]
+        ,
+        yourJS:[
+            'js/main'
+        ]
+    })

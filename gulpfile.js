@@ -12,7 +12,7 @@ let gulp = require('gulp'),
 // ==============  SASS  ============== 
 // Use packages: gulp-sass, gulp-postcss, postcss-sorting, gulp-autoprefixer, browser-sync
 gulp.task('sass',function(){
-	return gulp.src('src/sass/**/*.sass')
+	return gulp.src('src/superstructure/sass/**/*.sass')
 			.pipe(sassGlobe())
 			.pipe(sass())
 			.pipe(postcss(
@@ -30,7 +30,7 @@ gulp.task('sass',function(){
 // ==============  PUG  ============== 
 // Use packages: gulp-pug, del, 
 	gulp.task('pug',function(){
-		return gulp.src('src/pug/*.pug')
+		return gulp.src('src/superstructure/*.pug')
 				.pipe(pug({
 					pretty: true
 				}))
@@ -38,11 +38,11 @@ gulp.task('sass',function(){
 	});
 	// Delete Clone Pug Template On the Fly
 	gulp.task('delClone', function(){
-		del('src/cloneThisForNewPage.html');
+		del('src/_newPage.html');
 	});
 	// Clear custom Pug files
 	gulp.task('clearPugDir', function(){
-		del(['src/pug/*.pug','src/pug/blocks/**/*.pug', '!src/pug/templates']);
+		del(['src/superstructure/*.pug','src/superstructure/pug/blocks/**/*.pug']);
 	});
 
 // ==============  DELETE  ============== 
@@ -54,13 +54,6 @@ gulp.task('sass',function(){
 		});
 	});
 
-	// -------------- drop project architecture to default stat
-	gulp.task('destroy',function(){
-		del(['build/*','src/css/*.css','src/vendor/**/*','src/fonts/**/*','src/js/**/*','src/sass/**/*','!src/sass/mixins','!src/sass/reset.sass','src/pug/*.pug','src/pug/blocks/**/*.pug','!src/pug/templates','src/*.html','src/images/**/*'],{dryRun: false}).then(paths => {
-			console.log('DELETED:\n', paths.join('\n'));
-		});;
-	});
-
 // ==============  LIVE RELOAD (BROWSER SYNC)  ============== 
 // Use packages: gulp-sass, gulp-postcss, postcss-sorting, gulp-autoprefixer, browser-sync, del, gulp-pug
 	gulp.task('fly',function(){
@@ -69,8 +62,8 @@ gulp.task('sass',function(){
 						baseDir: 'src'
 					}}
 			);
-		gulp.watch('src/pug/**/*.pug',['pug', 'delClone']);
-		gulp.watch("src/sass/**/*.sass", ['sass']);
+		gulp.watch('src/superstructure/**/*.pug',['pug', 'delClone']);
+		gulp.watch("src/superstructure/sass/**/*.sass", ['sass']);
 		gulp.watch('src/*.html').on('change', browserSync.reload);
 		gulp.watch('src/js/**/*.js').on('change', browserSync.reload);
 		gulp.watch('src/img/**/*').on('change', browserSync.reload);
