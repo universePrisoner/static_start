@@ -1,17 +1,17 @@
 let gulp = require('gulp'),
-	sassGlobe = require('gulp-sass-glob'),
-	sass = require('gulp-sass'),
+	sassGlobe = require('gulp-sass-glob'),//import sass|scss files
+	sass = require('gulp-sass'), 
 	autoprefixer = require('gulp-autoprefixer'),
 	browserSync = require('browser-sync'),
-	del = require('del'),
+	clean = require('gulp-clean'),
 	postcss = require('gulp-postcss'),
-	sorting = require('postcss-sorting'),
-	pug = require('gulp-pug'),
-	minIMG = require('gulp-imagemin');
+	sorting = require('postcss-sorting'),//sorting CSS properties by alphabetical order
+	minIMG = require('gulp-imagemin'),
+	useref = require('gulp-useref');
 
 // ==============  SASS  ============== 
 gulp.task('sass',function(){	
-	return gulp.src('src/blocks/sass/**/*.sass')
+	return gulp.src('src/sass/**/*.sass')
 			.pipe(sassGlobe())
 			.pipe(sass().on('error', sass.logError))
 			.pipe(autoprefixer({browsers: ['last 15 versions'], cascade: false}))
@@ -20,60 +20,48 @@ gulp.task('sass',function(){
 					"properties-order": "alphabetical"
 				})]
 			))
-			.pipe(gulp.dest('src/static/css'))
+			.pipe(gulp.dest('src/css'))
 			.pipe(browserSync.stream());
 });
 
-
-
-// ==============  PUG  ============== 
-	gulp.task('pug',function(){
-		return gulp.src('src/blocks/pug/**/*.pug')
-				.pipe(pug({
-					pretty: true
-				}))
-				.pipe(gulp.dest('src/static/'));
-	});
-
 // ==============  DELETE  ============== 
 	// -------------- clear build directory --------------
-	gulp.task('del',function(){
-		del('build/*', {dryRun: true}).then(paths => {
-			console.log('DELETED:\n', paths.join('\n'));
-		});
-	});
+	gulp.task('clean', function () {
+    return gulp.src('build/**/*', {read: false})
+        .pipe(clean());
+});
 
 // ==============  LIVE RELOAD (BROWSER SYNC)  ============== 
-	gulp.task('fly',function(){
+	gulp.task('default',function(){
 		browserSync.init({
 					server: {
-						baseDir: 'src/static'
+						baseDir: 'src'
 					}}
 			);
-		gulp.watch('src/blocks/**/*.pug',['pug']);
-		gulp.watch("src/blocks/sass/**/*.sass", ['sass']);
-		gulp.watch('src/static/*.html').on('change', browserSync.reload);
-		gulp.watch('src/static/js/**/*.js').on('change', browserSync.reload);
-		gulp.watch('src/static/img/**/*').on('change', browserSync.reload);
-		gulp.watch('src/static/fonts/**/*').on('change', browserSync.reload);
+		gulp.watch("src/sass/**/*.sass", ['sass']);
+		gulp.watch('src/*.html').on('change', browserSync.reload);
+		gulp.watch('src/js/**/*.js').on('change', browserSync.reload);
+		gulp.watch('src/img/**/*').on('change', browserSync.reload);
+		gulp.watch('src/fonts/**/*').on('change', browserSync.reload);
 
 	});
-
+gulp.task('useref', function(){
+		  return gulp.src('src/*.html')
+		    .pipe(useref())
+		    .pipe(gulp.dest('build/'))
+		});
 
 // ==============  BUILD PROJECT  ============== 
-	gulp.task('build' ,function(){
-		gulp.src('src/static/*.html').pipe(gulp.dest('build/'));
-		gulp.src('src/static/css/**/*.css').pipe(gulp.dest('build/css/'));
-		gulp.src('src/static/js/**/*.js').pipe(gulp.dest('build/js/'));
-		gulp.src('src/static/images/**/*')
+	gulp.task('build',['useref'] ,function(){
+		
+		gulp.src('src/img/**/*')
 			.pipe(minIMG({
 				interlaced: true,
 				progressive: true,
 				optimizationLevel: 5,
 				svgoPlugins: [{removeViewBox: true}]}))
-			.pipe(gulp.dest('build/images/'));
-		gulp.src('src/static/fonts/**/*').pipe(gulp.dest('build/fonts/'));
-		gulp.src('src/static/vendor/**/*').pipe(gulp.dest('build/vendor/'));
+			.pipe(gulp.dest('build/img/'));
+		gulp.src('src/fonts/**/*').pipe(gulp.dest('build/fonts/'));
 	});
 
  

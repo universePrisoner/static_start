@@ -1,1 +1,0 @@
-document.getElementById('paragraph').style.color = "blue";
