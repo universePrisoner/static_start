@@ -7,13 +7,15 @@ let gulp = require('gulp'),
 	postcss = require('gulp-postcss'),
 	sorting = require('postcss-sorting'),//sorting CSS properties by alphabetical order
 	minIMG = require('gulp-imagemin'),
-	useref = require('gulp-useref');
+	useref = require('gulp-useref'),
+	notify = require('gulp-notify');
 
 // ==============  SASS  ============== 
 gulp.task('sass',function(){	
 	return gulp.src('src/sass/**/*.sass')
 			.pipe(sassGlobe())
-			.pipe(sass().on('error', sass.logError))
+			.pipe(sass())
+			.on('error',notify.onError())
 			.pipe(autoprefixer({browsers: ['last 15 versions'], cascade: false}))
 			.pipe(postcss(
 				[sorting({
@@ -30,7 +32,6 @@ gulp.task('sass',function(){
     return gulp.src('build/**/*', {read: false})
         .pipe(clean());
 });
-
 // ==============  LIVE RELOAD (BROWSER SYNC)  ============== 
 	gulp.task('default',function(){
 		browserSync.init({
