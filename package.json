@@ -10,6 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.24.4",
+    "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-clean": "^0.4.0",
@@ -20,7 +21,9 @@
     "gulp-sass": "^3.2.1",
     "gulp-sass-glob": "^1.0.9",
     "gulp-useref": "^3.1.5",
-    "postcss-sorting": "^3.1.0"
+    "gulp.spritesmith": "^6.9.0",
+    "postcss-sorting": "^3.1.0",
+    "vinyl-buffer": "^1.0.1"
   },
   "dependencies": {}
 }

@@ -12,6 +12,10 @@ global.$ = {
 	minIMG: require('gulp-imagemin'),
 	useref: require('gulp-useref'),
 	notify: require('gulp-notify'),
+	spritesmith: require('gulp.spritesmith'),
+	buffer: require('vinyl-buffer'),
+	del: require('del'),
+
 
 	path: {
 		tasks: require('./gulp/config/tasks.js'),
