@@ -1,0 +1,8 @@
+{
+	"navPages":{
+		"Главная" : "index.html",
+		"О нас":"about.html",
+		"Портфолио":"portfolio.html",
+		"Контакты":"contacts.html"
+	}
+}

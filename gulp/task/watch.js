@@ -10,6 +10,6 @@ module.exports = function(){
 		$.gulp.watch($.path.dev.js + '**/*.js').on('change', $.browserSync.reload);
 		$.gulp.watch($.path.dev.img + '**/*').on('change', $.browserSync.reload);
 		$.gulp.watch($.path.dev.fonts + '**/*').on('change', $.browserSync.reload);
-
+		$.gulp.watch([$.path.dev.pug + 'pages/*.pug',$.path.dev.pug + 'blocks/**/*.pug'],['pug']).on('change', $.browserSync.reload);
 	});
 }

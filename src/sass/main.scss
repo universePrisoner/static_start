@@ -1,2 +1,14 @@
+@import "helpers/normalize";
+@import 'helpers/mixins';
 @import "fonts";
 
+html{
+	font-size: 16px;
+}
+
+@import 'helpers/sprite';
+
+// Header
+@import 'blocks/header';
+// Footer
+@import 'blocks/footer';

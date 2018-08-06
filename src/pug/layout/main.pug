@@ -1,0 +1,45 @@
+include ../mixins
+
+block variables
+
+<!DOCTYPE html>
+	<!--[if (gte IE 9)|!(IE)]><!-->
+	html(lang="ru-RU") <!--<![endif]-->
+		head
+			meta(charset="utf-8")
+
+			meta(http-equiv="X-UA-Compatible" content="IE=edge")
+			meta( name="viewport" ,content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=device-width")
+
+			title #{title}
+			meta( name="description" content="")
+			meta( name="keywords" content="")
+			link( rel="icon" href="" type="image/x-icon")
+			link( rel="apple-touch-icon" href="" type="image/png")
+			<!--Apple iOS | https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html-->
+			meta( name="apple-mobile-web-app-capable" content="yes")
+			meta( name="apple-mobile-web-app-status-bar-style" content="black")
+			<!-- build:css css/vendor.css -->
+			<!-- endbuild -->
+			<!-- build:css css/common.css -->
+			link( rel="stylesheet" href="css/main.css")
+			<!-- endbuild -->
+			<!--[if lt IE 9]><!-->
+				<script defer async src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.10/es5-shim.min.js"></script>
+				<script defer async src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.3/es6-shim.min.js"></script>
+				<script defer async src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+				<script defer async src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+				<script defer async src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script><!--<![endif]-->
+		body
+			main
+				include ../blocks/header
+				block content
+				include ../blocks/footer
+			<!-- build:js js/vendor.js -->
+			script(src="vendor/jquery/jquery.min.js")
+			block script-vendor
+			<!-- endbuild -->
+			<!-- build:js js/main.js -->
+			script(src="js/main.js")
+			block script-custom
+			<!-- endbuild -->

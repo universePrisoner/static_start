@@ -1,0 +1,10 @@
+extend ../layout/main
+block variables
+	- var title = 'Главная страница'
+
+block content
+	nav
+		ul.menu-list
+			each link, title in nav.navPages
+				li
+					a(href=link)= title

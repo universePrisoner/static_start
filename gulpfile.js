@@ -15,6 +15,9 @@ global.$ = {
 	spritesmith: require('gulp.spritesmith'),
 	buffer: require('vinyl-buffer'),
 	del: require('del'),
+	pug: require('gulp-pug'),
+	fs: require('fs'),
+	sourcemaps: require('gulp-sourcemaps'),
 
 
 	path: {
@@ -26,7 +29,8 @@ global.$ = {
 			js: 'src/js/',
 			fonts: 'src/fonts/',
 			img: 'src/img/',
-			css: 'src/css'
+			css: 'src/css/',
+			pug: 'src/pug/'
 		},
 		build: {
 			base: 'build/',
