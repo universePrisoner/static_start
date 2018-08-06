@@ -1,0 +1,7 @@
+@import "helpers/font";
+
+// Example: @include font-face(Samplinoff, fonts/Samplinoff);
+
+$system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+$fonA: "someFont" $system
