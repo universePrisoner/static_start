@@ -4,6 +4,7 @@ module.exports = [
 	'./gulp/task/sass',
 	'./gulp/task/watch',
 	'./gulp/task/sprites',
-	'./gulp/task/pug'
+	'./gulp/task/pug',
+	'./gulp/task/font-converter'
 
 ]

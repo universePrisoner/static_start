@@ -18,6 +18,8 @@ global.$ = {
 	pug: require('gulp-pug'),
 	fs: require('fs'),
 	sourcemaps: require('gulp-sourcemaps'),
+	ttf2woff2: require('gulp-ttf2woff2'),
+	ttf2woff: require('gulp-ttf2woff'),
 
 
 	path: {
