@@ -1,8 +1,11 @@
+@import 'libs';
 @import "helpers/normalize";
 @import 'helpers/mixins';
 @import "fonts";
 
-html{
+* { box-sizing: border-box; }
+
+html, body {
 	font-size: 16px;
 }
 
