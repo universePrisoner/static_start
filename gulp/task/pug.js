@@ -3,7 +3,7 @@ module.exports = function () {
 		return $.gulp.src($.path.dev.pug + 'pages/*.pug')
 		.pipe($.pug({
 			locals: {
-				nav: JSON.parse($.fs.readFileSync('./src/pug/data/navigation.json', 'utf-8'))
+				config: JSON.parse($.fs.readFileSync('./src/pug/data/config.json', 'utf-8'))
 			},
 			pretty:true}))
 		.on('error',$.notify.onError(function (error) {

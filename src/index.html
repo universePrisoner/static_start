@@ -1,41 +1,28 @@
-<!DOCTYPE html>
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html lang="ru-RU"><!--<![endif]-->
+
+<!-- Generate connected resources based on pug/data/config.json : css and js blocks.-->
+<!-- list: list of resources names. for example path to the resources list: config.css.plain.list-->
+<!-- name: block to detect libs and own resources-->
+<!-- type: type of a resource. needed to generate respectively DOM node.-->
+<!-- Generate variables for path to resource-->
+<!-- Generate right type of DOM node respectively on resource extention--><DOCTYPE html>
+<html lang="ru-RU">
   <head>
+    <title>Home</title>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=device-width"/>
-    <title>Главная страница</title>
+    <meta name="viewport" content="initial-scale=1.0,width=device-width"/>
     <meta name="description" content=""/>
     <meta name="keywords" content=""/>
-    <link rel="icon" href="" type="image/x-icon"/>
-    <link rel="apple-touch-icon" href="" type="image/png"/><!--Apple iOS | https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html-->
     <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black"/><!-- build:css css/vendor.css -->
-<!-- endbuild -->
-<!-- build:css css/common.css -->
-    <link rel="stylesheet" href="css/main.css"/><!-- endbuild -->
-<!--[if lt IE 9]><!-->
-<script defer async src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.10/es5-shim.min.js"></script>
-<script defer async src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.3/es6-shim.min.js"></script>
-<script defer async src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-<script defer async src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-<script defer async src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script><!--<![endif]-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="icon" href="" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="" type="image/png"/>
+    <link rel="stylesheet" href="css/main.css"/>
   </head>
   <body>
-    <main>
-      <h2>123</h2>
-      <nav>
-        <ul class="menu-list">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="about.html">О нас</a></li>
-          <li><a href="portfolio.html">Портфолио</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-        </ul>
-      </nav>
-    </main><!-- build:js js/vendor.js -->
-    <script src="vendor/jquery/jquery.min.js"></script><!-- endbuild -->
-<!-- build:js js/main.js -->
-    <script src="js/main.js"></script><!-- endbuild -->
+    <header></header>
+    <footer></footer>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

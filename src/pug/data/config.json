@@ -1,0 +1,30 @@
+{
+	"css"	:	{
+		"plain"		:	{
+			"objname"	:	"plain",
+			"path"		:	"css/",
+			"ext"		:	".css",
+			"list"		:	["main"]
+		},
+		"vendor"	:	{
+			"objname"	:	"vendor",
+			"path"		:	"vendor/",
+			"ext"		:	".min.css",
+			"list"		:	[]
+		}
+	},
+	"js"	:	{
+		"plain"		:	{
+			"objname"	:	"plain",
+			"path"		:	"js/",
+			"ext"		:	".js",
+			"list"		:	["main"]
+		},
+		"vendor"	:	{
+			"objname"	:	"vendor",
+			"path"		:	"vendor/",
+			"ext"		:	".min.js",
+			"list"		:	["jquery/jquery"]
+		}
+	}
+}
