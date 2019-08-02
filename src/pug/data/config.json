@@ -2,13 +2,13 @@
 	"css"	:	{
 		"plain"		:	{
 			"objname"	:	"plain",
-			"path"		:	"css/",
+			"path"		:	"static/css/",
 			"ext"		:	".css",
 			"list"		:	["main"]
 		},
 		"vendor"	:	{
 			"objname"	:	"vendor",
-			"path"		:	"vendor/",
+			"path"		:	"static/vendor/",
 			"ext"		:	".min.css",
 			"list"		:	[]
 		}
@@ -22,7 +22,7 @@
 		},
 		"vendor"	:	{
 			"objname"	:	"vendor",
-			"path"		:	"vendor/",
+			"path"		:	"static/vendor/",
 			"ext"		:	".min.js",
 			"list"		:	["jquery/jquery"]
 		}
