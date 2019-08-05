@@ -4,7 +4,7 @@ module.exports = function () {
 		.pipe($.pug({
 			locals: {
 				// Hack to throw config file to pug
-				config: JSON.parse($.fs.readFileSync('./src/pug/data/config.json', 'utf-8'))
+				index: JSON.parse($.fs.readFileSync('./src/pug/data/dataIndex.json', 'utf-8'))
 			},
 			pretty:true,
 			verbose: true

@@ -1,7 +1,8 @@
 extend ../layout/main
 
 block variables
-	- var title = 'Home'
+	- const title = index.title
+
 
 block content
-	p Hell no
+	p !{ title }
