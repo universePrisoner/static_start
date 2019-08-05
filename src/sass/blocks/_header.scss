@@ -1,10 +1,6 @@
-h2 {
-	color: red;
-	background-color: blue;
+p {
+	background-color: red;
 	font: rem(28)/rem(50) sans-serif;
-	@include square(15);
 }
 
-p {
-	background: red;
-}
+

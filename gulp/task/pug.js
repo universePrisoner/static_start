@@ -3,9 +3,12 @@ module.exports = function () {
 		return $.gulp.src($.path.dev.pug + 'pages/*.pug')
 		.pipe($.pug({
 			locals: {
+				// Hack to throw config file to pug
 				config: JSON.parse($.fs.readFileSync('./src/pug/data/config.json', 'utf-8'))
 			},
-			pretty:true}))
+			pretty:true,
+			verbose: true
+		}))
 		.on('error',$.notify.onError(function (error) {
 			return {
 				title: 'Pug',

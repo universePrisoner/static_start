@@ -6,7 +6,7 @@ module.exports = function(){
 						baseDir: $.path.dev.base
 					}}
 			);
-		gulp.watch($.path.dev.sass + "**/*.scss", gulp.parallel(['sass']));
+		gulp.watch($.path.dev.sass + "**/*.scss", gulp.parallel(['sass']), $.browserSync.reload);
 		gulp.watch($.path.dev.html + '*.html').on('change', $.browserSync.reload);
 		gulp.watch($.path.dev.js + '**/*.js').on('change', $.browserSync.reload);
 		gulp.watch($.path.dev.img + '**/*').on('change', $.browserSync.reload);

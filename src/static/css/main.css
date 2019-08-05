@@ -309,14 +309,8 @@ template {
 html, body {
   font-size: 16px; }
 
-h2 {
-  background-color: blue;
-  color: red;
-  font: 1.75rem/3.125rem sans-serif;
-  height: 15px;
-  width: 15px; }
-
 p {
-  background: red; }
+  background-color: red;
+  font: 1.75rem/3.125rem sans-serif; }
 
 /*# sourceMappingURL=maps/main.css.map */
