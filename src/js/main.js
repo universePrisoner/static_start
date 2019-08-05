@@ -1,3 +1,6 @@
-console.log('Hello brothers!');
-let p = $('p').text();
-console.log(p);
+/* TODO: babel
+ * maybe
+ * TS who knows
+ *
+ */
+console.log(1);
