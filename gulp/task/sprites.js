@@ -1,8 +1,14 @@
-module.exports = function () {
-	$.gulp.task('sprites',function () {
+import { task, src, dest } from 'gulp';
+import del from del;
 
+module.exports = () => {
+	task('makeSprites', () => {
+
+		/* TODO: make SVG sprites */
 		// Delete existing files first
-		let deleteSpriteFiles = $.del([$.path.dev.img + 'sprites/sprite.png', $.path.dev.sass + 'helpers/_sprite.sass']);
+		const deleteSpriteFiles = del(
+			[ $.path.dev.img + 'sprites/sprite.png', $.path.dev.sass + 'helpers/_sprite.sass']
+		);
 
 
 		// Create sprites
@@ -22,5 +28,6 @@ module.exports = function () {
 		 
 		  
 		return [deleteSpriteFiles,imgStream, cssStream];
+		return Promise.resolve('');
 	})
 }

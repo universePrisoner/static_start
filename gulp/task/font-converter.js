@@ -1,31 +1,31 @@
-import gulp from 'gulp';
+'use-strict';
+import { series, src, dest, task } from 'gulp';
+import clean from 'gulp-clean';
+import { onError } from 'gulp-notify';
+import ttf2woffGulp from 'gulp-ttf2woff';
+import ttf2woff2Gulp from 'gulp-ttf2woff2';
 
-module.exports = function(){
-	gulp.task('makeFonts', function(){
-		const woff2 = () => {
-			return gulp.task('convertWOFF2', () => {
-				return gulp.src('./src/static/fonts/**/*.ttf')
-					.pipe($.ttf2woff2())
-					.pipe(gulp.dest('./src/static/fonts/'));	
-			});
-		}
+const converters = {
+	woff  : ttf2woffGulp,
+	woff2 : ttf2woff2Gulp
+}
 
-		const woff = () => {
-			return gulp.task('convertWOFF', () => {
-				return gulp.src('./src/static/fonts/**/*.ttf')
-				.pipe($.ttf2woff())
-				.pipe(gulp.dest('./src/fonts/'));
-			});
-		}
 
-		const deleteTTF = () => {
-			return gulp.task('deleteTTF', () => {
-				return gulp.src('./src/static/fonts/**/*.ttf')
-				.pipe($.clean());
-			});
+module.exports = () => {
+	task('makeFonts', function(){
+		const convertTTF = done => {
+			for( const converter in converters ) {
+				src(`${ $.path.dev.fonts }*/*.ttf`).pipe(converters[converter]()).pipe(dest($.path.dev.fonts));
+			}
+			
+			done();
 		}
 		
-		return gulp.series(woff2, woff, deleteTTF, (res) => { res()});
+		const deleteTTF  = () => src(`${ $.path.dev.fonts }*/*.ttf`).pipe(clean());
+		
+		series(convertTTF, deleteTTF)();
+		
+		return Promise.resolve('');
 	});
-	
+
 }

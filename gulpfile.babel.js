@@ -32,6 +32,7 @@ global.$ = {
 			fonts: 'src/static/fonts/',
 			img  : 'src/static/img/',
 			css  : 'src/static/css/',
+			fonts: './src/static/fonts/',
 		},
 		build: {
 			base : 'build/',
