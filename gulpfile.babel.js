@@ -1,4 +1,5 @@
-"use strict";
+'use strict';
+import tasks from './gulp/taskList';
 
 global.$ = {
 	gulp        : require('gulp'),
@@ -22,21 +23,17 @@ global.$ = {
 
 
 	path: {
-		tasks: require('./gulp/config/tasks.js'),
 		dev  : {
 			js   : 'src/js/',
 			sass : 'src/sass/',
 			pug  : 'src/pug/',
-			base : 'src/static/',
-			html : 'src/static/',
-			fonts: 'src/static/fonts/',
-			img  : 'src/static/img/',
-			css  : 'src/static/css/',
-			fonts: './src/static/fonts/',
+			base : 'static/',
+			html : 'static/',
+			img  : 'static/img/',
+			css  : 'static/css/',
+			fonts: 'static/fonts/',
 		},
 		build: {
-			base : 'build/',
-			sass : 'build/sass/',
 			html : 'build/',
 			js   : 'build/js/',
 			fonts: 'build/fonts/',
@@ -47,4 +44,4 @@ global.$ = {
 };
 
 
-$.path.tasks.forEach(taskPath => require(taskPath)())
+tasks.forEach(task => require(task)());

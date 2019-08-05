@@ -1,5 +1,5 @@
 import { task, src, dest } from 'gulp';
-import del from del;
+import del from 'del';
 
 module.exports = () => {
 	task('makeSprites', () => {

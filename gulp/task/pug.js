@@ -1,7 +1,6 @@
-import * as gulp         from 'gulp';
-import pug               from 'gulp-pug';
-import { onError }       from 'gulp-notify';
-import * as browserSync  from 'browser-sync';
+import { src, dest, task }   from 'gulp';
+import pug                   from 'gulp-pug';
+import { onError }           from 'gulp-notify';
 import fs from 'fs';
 
 
@@ -17,23 +16,18 @@ const compileOptions = {
 };
 
 
-const compilePug = () => {
-	gulp.task('pug', () => {
-		return gulp.src(`${$.path.dev.pug}pages/*.pug`)
+module.exports = () => {
+	task('pug', () => {
+		src(`${ $.path.dev.pug }pages/*.pug`)
 			.pipe(pug(compileOptions))
 			.on('error', onError( err => {
-				console.log({
-					error    : err.Error,
-					code     : err.code,
-					message  : err.msg,
-					fileName : err.filename
-				});
+				console.log(err);
 				
 				return { title: 'PUG', message: err.code  };
 			}))
-			.pipe( gulp.dest($.path.dev.base) )
-			.on('end', browserSync.reload );
+			.pipe(dest($.path.dev.base) );
+		
+		return Promise.resolve();
 	});
 }
 
-module.exports = compilePug;

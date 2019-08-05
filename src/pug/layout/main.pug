@@ -1,11 +1,8 @@
 block variables
 
-<DOCTYPE html>
-	if ( lang )
-		- language = lang
-	else
-		- language = 'ru-RU'
+<!DOCTYPE html>
+	- const language = lang || 'ru-RU'
 
 	html(lang=language)
 		include head
-		include body  
+		include body
