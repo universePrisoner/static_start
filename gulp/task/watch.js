@@ -11,12 +11,13 @@ module.exports = () => {
 		$.browserSync.init(browserSyncOptions);
 		
 		[
-			watch(`${ $.path.dev.html   }*.html`),
-			watch(`${ $.path.dev.js     }**/*.js`),
-			watch(`${ $.path.dev.img    }**/*`),
-			watch(`${ $.path.dev.fonts  }**/*`),
-			watch(`${ $.path.dev.sass   }**/*.scss`, parallel(['sass'])),
-			watch(`${ $.path.dev.pug    }**/*.pug` , parallel(['pug'])),
+			watch(`${ $.path.dev.html    }*.html`),
+			watch(`${ $.path.dev.js      }**/*.js`),
+			watch(`${ $.path.dev.img     }**/*`),
+			watch(`${ $.path.dev.fonts   }**/*`),
+			watch(`${ $.path.dev.blocks  }**/*`,      parallel(['scss', 'pug'])),
+			watch(`${ $.path.dev.scss    }**/*.scss`, parallel(['scss'])),
+			watch(`${ $.path.dev.pug     }**/*.pug` , parallel(['pug'])),
 		].forEach(watcher => {
 			watcher.on('change', $.browserSync.reload);
 		});

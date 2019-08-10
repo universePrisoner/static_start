@@ -24,14 +24,15 @@ global.$ = {
 
 	path: {
 		dev  : {
-			js   : 'src/js/',
-			sass : 'src/sass/',
-			pug  : 'src/pug/',
-			base : 'static/',
-			html : 'static/',
-			img  : 'static/img/',
-			css  : 'static/css/',
-			fonts: 'static/fonts/',
+			blocks : 'src/blocks/',
+			js     : 'src/js/',
+			scss   : 'src/scss/',
+			pug    : 'src/pug/',
+			base   : 'static/',
+			html   : 'static/',
+			img    : 'static/img/',
+			css    : 'static/css/',
+			fonts  : 'static/fonts/',
 		},
 		build: {
 			html : 'build/',

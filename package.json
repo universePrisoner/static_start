@@ -14,6 +14,7 @@
     "babel-core": "^6.26.3",
     "babel-preset-es2015": "^6.24.1",
     "browser-sync": "^2.26.7",
+    "commander": "^3.0.0",
     "del": "^3.0.0",
     "fs": "0.0.1-security",
     "gulp": "^4.0.2",

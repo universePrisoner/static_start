@@ -9,9 +9,12 @@ html, body {
 	font-size: 16px;
 }
 
+.asasfsdf { color: red;}
+
 @import 'helpers/sprite';
 
+
 // Header
-@import 'blocks/header';
+@import '../blocks/header/header';
 // Footer
-@import 'blocks/footer';
+@import '../blocks/footer/_footer.scss';

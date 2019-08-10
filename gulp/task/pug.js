@@ -5,7 +5,7 @@ import fs from 'fs';
 
 
 const compileData = {
-	index : JSON.parse(fs.readFileSync('./src/pug/data/dataIndex.json', 'utf-8'))
+	index : JSON.parse(fs.readFileSync('./src/pug/data/index.json', 'utf-8'))
 };
 
 
